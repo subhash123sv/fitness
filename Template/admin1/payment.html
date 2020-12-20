@@ -1,0 +1,43 @@
+{% extends 'admin1/layout/master.html' %}
+
+{% block main %}
+
+<div class="container-fluid mt-2 card mt-2 border border-secondary">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-10">
+ <div class="card-body">
+                <table class="table table-bordered">
+                 
+                  <thead>                  
+                    <tr>
+
+                      <th>No</th>
+                      <th>Order id</th>
+                      <th>Payment status </th>
+                      <th>Payment Mode</th>
+                      <th>Time</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>1</td>
+                      <td>Paid</td>
+                      <td>Cash</td>
+                      <td>10:25</td>
+                      <td><a href="" class="btn btn-outline-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        <a href="" class="btn btn-outline-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        <a href="" class="btn btn-outline-warning"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>      
+    </div>
+  </div>
+</div>
+
+{% endblock %}

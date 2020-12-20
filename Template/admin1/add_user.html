@@ -1,0 +1,112 @@
+{% extends 'admin1/layout/master.html' %}
+{% block main %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-10">
+		  <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modal-primary">Add User</button>
+		<div class="modal fade" id="modal-primary">
+        <div class="modal-dialog">
+          <div class="modal-content bg-primar ">
+            <div class="modal-header">
+              <h4 class="modal-title">Add user Successfully</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+               <form action="/data_store" method="POST">
+               {% csrf_token %}
+                <label>User Name:</label>
+                <input type="text" name="username" class="form-control w-50" placeholder="Please Enter you Username"><br>
+                <label>First Name:</label>
+                <input type="text" name="firstname" class="form-control w-50" placeholder="Please Enter you Firstname"><br>
+                <label>Last Name:</label>
+                <input type="text" name="lastname" class="form-control w-50" placeholder="Please Enter you LastName"><br>
+                <label>Gender:</label>
+                <input type="radio" name="gender" class="form-control w-50">Male
+                <input type="radio" name="gender" class="form-control w-50">Female
+                <br>
+                <label>Image:</label>
+                <input type="file" name="image" class="form-control w-50">
+                <label>Age:</label>
+                <input type="number" name="age" class="form-control w-50"><br>
+                <label>DOB:</label>
+                <input type="Date" name="dob" class="form-control w-50"><br>
+                <label>Address:</label>
+                <textarea name="Address" class="form-control w-50" col="20" rows="5"></textarea>
+                <label>email:</label>
+                <input type="email" name="Email" class="form-control"><br>
+                <label>Contact Number:</label>
+                <input type="number" name="con_no" min="10"><br>
+                <input type="Submit" name="Submit" value="Submit" class="btn btn-success w-50"><br>          
+             </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-light">Save changes</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+
+<br>
+		<div class="container-fluid">
+        <div class="row">
+            <div class="card mt-2 border border-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Bordered Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered border border-info">
+                  <thead>                  
+                    <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone Number</th>
+                      <th>Image</th>
+                      <th>Action</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Update software</td>
+                     <td>adarsh@gmial.com</td>
+                     <td>5566566</td>
+                     <td>Image</td>
+                     <td><a href="" class="btn btn-outline-primary mt-2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                     <a href="" class="btn btn-outline-danger mt-2"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                     <a href="" class="btn btn-outline-warning mt-2"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                     <a href="" class="btn btn-outline-success mt-2"><i class="fa fa-check" aria-hidden="true"></i></a>
+                     <a href="" class="btn btn-outline-dark mt-2"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                     
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 justify-content-center">
+                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
